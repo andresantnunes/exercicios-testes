@@ -1,13 +1,10 @@
 package com.example.exerciciotestes.service;
 
 import com.example.exerciciotestes.controller.request.VendaRequest;
-import com.example.exerciciotestes.model.Cliente;
-import com.example.exerciciotestes.model.Produto;
 import com.example.exerciciotestes.model.Venda;
 import com.example.exerciciotestes.repository.VendaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,13 +26,8 @@ public class VendaService {
     }
 
     public Venda realizarVenda(VendaRequest vendaRequest){
-        Cliente cliente = clienteService.buscaClientePorId(vendaRequest.getClienteId());
-
-        List<Produto> listaProduto = new ArrayList<>();
-        vendaRequest.getProdutos().forEach(id->
-                listaProduto.add(produtoService.buscaProdutoPorId(id)));
-
-        return this.VendaRepository.save(new Venda(vendaRequest.getValorVenda(),cliente,listaProduto));
+        // TODO: código a ser feito no método TDD
+        return null;
     }
 
     public Venda buscaVendaPorId (Long id){

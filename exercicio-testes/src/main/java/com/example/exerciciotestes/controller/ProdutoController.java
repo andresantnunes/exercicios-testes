@@ -54,7 +54,7 @@ public class ProdutoController {
   public ResponseEntity<Object> updateProduto(@PathVariable (value = "id")Long id,
                                                @Valid @RequestBody ProdutoRequest produtoRequest){
 
-    Produto produto =this.produtoService.atualizarCliente(id,produtoRequest);
+    Produto produto =this.produtoService.atualizarProduto(id,produtoRequest);
 
     return ResponseEntity.status(HttpStatus.OK).body(produto);
 

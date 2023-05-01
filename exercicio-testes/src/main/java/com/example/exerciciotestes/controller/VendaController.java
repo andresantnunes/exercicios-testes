@@ -43,10 +43,8 @@ public class VendaController {
 
   @PostMapping
   public ResponseEntity<Venda> saveVenda(@Valid @RequestBody VendaRequest vendaRequest){
-
-    Venda newVenda =this.vendaService.realizarVenda(vendaRequest);
-
-    return ResponseEntity.status(HttpStatus.CREATED).body(newVenda);
+    // TODO: código a ser feito no método TDD
+    return null;
 
   }
 

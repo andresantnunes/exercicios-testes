@@ -25,7 +25,7 @@ public class ProdutoService {
         return this.ProdutoRepository.save(new Produto(produto.getNomeProduto(), produto.getValorProduto()));
     }
 
-    public Produto atualizarCliente(Long id, ProdutoRequest produtoNovo){
+    public Produto atualizarProduto(Long id, ProdutoRequest produtoNovo){
         Produto produtoAtual = buscaProdutoPorId(id);
         if(produtoAtual == null){
             return null;
