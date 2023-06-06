@@ -10,19 +10,19 @@ import java.util.List;
 @Service
 public class ProdutoService {
 
-    private final ProdutoRepository ProdutoRepository;
+    private final ProdutoRepository produtoRepository;
 
     public ProdutoService(ProdutoRepository ProdutoRepository) {
-        this.ProdutoRepository = ProdutoRepository;
+        this.produtoRepository = ProdutoRepository;
     }
 
 
     public List<Produto> buscaTodosProdutos(){
-        return this.ProdutoRepository.findAll();
+        return this.produtoRepository.findAll();
     }
 
     public Produto salvarProduto( ProdutoRequest produto){
-        return this.ProdutoRepository.save(new Produto(produto.getNomeProduto(), produto.getValorProduto()));
+        return this.produtoRepository.save(new Produto(produto.getNomeProduto(), produto.getValorProduto()));
     }
 
     public Produto atualizarProduto(Long id, ProdutoRequest produtoNovo){
@@ -32,13 +32,13 @@ public class ProdutoService {
         }
         produtoAtual.setNomeProduto(produtoNovo.getNomeProduto());
         produtoAtual.setValorProduto(produtoNovo.getValorProduto());
-        return this.ProdutoRepository.save(produtoAtual);
+        return this.produtoRepository.save(produtoAtual);
     }
     public Produto buscaProdutoPorId (Long id){
-        return this.ProdutoRepository.findById(id).orElse(null);
+        return this.produtoRepository.findById(id).orElse(null);
     }
 
     public void detelaProdutoPorId(Long id){
-        this.ProdutoRepository.deleteById(id);
+        this.produtoRepository.deleteById(id);
     }
 }

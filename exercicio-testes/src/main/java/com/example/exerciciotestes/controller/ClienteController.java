@@ -34,7 +34,7 @@ public class  ClienteController {
 
     Cliente cliente = this.clienteService.buscaClientePorId(id);
     if(cliente==null){
-      return ResponseEntity.status(HttpStatus.OK).body("Nenhuma Cliente");
+      return ResponseEntity.status(HttpStatus.OK).body("Nenhum Cliente");
     }
     return ResponseEntity.status(HttpStatus.OK).body(cliente);
   }
